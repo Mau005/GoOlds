@@ -5,16 +5,19 @@ import (
 	"log"
 	"net"
 
+	"github.com/Mau005/GoOlds/db"
 	"github.com/Mau005/GoOlds/networks"
 	"github.com/Mau005/GoOlds/utils"
 )
 
 func main() {
+	db.ConnectionSqlite("./GoOlds.db")
 
 	ld, err := net.Listen("tcp", ":8000")
 	if err != nil {
 		log.Fatalln(err)
 	}
+	fmt.Println("[OK] Server running")
 	for {
 		conn, err := ld.Accept()
 		if err != nil {

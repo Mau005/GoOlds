@@ -42,3 +42,7 @@ func (nw *NetworkMessage) Reset() {
 	nw.MsgBuf = make([]byte, 0)
 
 }
+
+func (nm *NetworkMessage) GetByte() byte {
+	return nm.MsgBuf[nm.ReadPos]
+}

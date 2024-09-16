@@ -8,7 +8,7 @@ type Player struct {
 	LookDir   int `gorm:"not null"`
 	Exp       int `gorm:"not null"`
 	Voc       int `gorm:"not null"`
-	Level     int `gorm:"not null"`
+	Level     int `gorm:"not null;default:1"`
 	Access    int `gorm:"not null"`
 	Cap       int `gorm:"not null"`
 	MagLevel  int `gorm:"not null"`
